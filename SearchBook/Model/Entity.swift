@@ -8,9 +8,13 @@
 import Foundation
 
 struct Entity: Codable {
+    ///총 개수
     let numFound: Int?
+    ///100개 단위 페이지 (시작 0)
     let start: Int?
+    ///데이터 목록
     let docs: [Docs]?
+    ///쿼리명
     let q: String?
 }
 struct Docs: Codable {

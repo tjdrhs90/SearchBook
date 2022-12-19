@@ -20,7 +20,7 @@ struct Service {
         components?.percentEncodedQueryItems = queryItems
         
         guard let url = components?.url else { return }
-        print(url)
+        
         URLSession.shared.dataTask(with: url) { data, _, _ in
             
             guard let data,

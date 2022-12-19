@@ -8,30 +8,32 @@
 import Foundation
 
 class ViewModel {
-    
+    ///데이터 엔티티
     var entity: Entity?
-    
+    ///책 목록
     var bookList: [Docs] = []
-    
+    ///서비스
     let service = Service()
-    
+    ///책 검색 완료
     var outPutData: (() -> ())?
-    
+    ///로딩 클로저
     var isLoading: ((Bool) -> ())?
-    
-    var isPaging = false
+    ///페이징 플래그
+    var isPaging = false {
+        didSet {
+            isLoading?(isPaging)
+        }
+    }
     
     func inputKeyword(_ keyword: String) {
         fetchData(keyword: keyword, page: "1")
     }
     
     func fetchData(keyword: String, page: String) {
-        print(type(of: self),#function)
         
         let changeKeyword = keyword.replacingOccurrences(of: " ", with: "+")
         
         isPaging = true
-        isLoading?(true)
         
         service.fetchData(keyword: changeKeyword, page: page) { [weak self] in
             self?.entity = $0
@@ -47,16 +49,15 @@ class ViewModel {
             DispatchQueue.main.async {
                 self?.outPutData?()
                 self?.isPaging = false
-                self?.isLoading?(false)
             }
         }
     }
     
     func scrollBottom() {
-        let totalCnt = entity?.numFound ?? 0
-        let nowCnt = bookList.count
+        let totalCount = entity?.numFound ?? 0
+        let nowCount = bookList.count
         
-        let hasNextPage = nowCnt < totalCnt
+        let hasNextPage = nowCount < totalCount
         
         if isPaging == false && hasNextPage {
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E3CD29629500211008811EE /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3CD29529500211008811EE /* DetailVC.swift */; };
 		5EDBAE86294FFE3700A6FBD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE85294FFE3700A6FBD4 /* AppDelegate.swift */; };
 		5EDBAE88294FFE3700A6FBD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE87294FFE3700A6FBD4 /* SceneDelegate.swift */; };
 		5EDBAE8D294FFE3700A6FBD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDBAE8B294FFE3700A6FBD4 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E3CD29529500211008811EE /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		5EDBAE82294FFE3700A6FBD4 /* SearchBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDBAE85294FFE3700A6FBD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDBAE87294FFE3700A6FBD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				5EDBAE9C294FFF2A00A6FBD4 /* ListVC.swift */,
 				5EDBAE9B294FFF2A00A6FBD4 /* ListCell.swift */,
+				5E3CD29529500211008811EE /* DetailVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				5EDBAEA32950003E00A6FBD4 /* Entity.swift in Sources */,
 				5EDBAE86294FFE3700A6FBD4 /* AppDelegate.swift in Sources */,
 				5EDBAE9E294FFF2A00A6FBD4 /* ListCell.swift in Sources */,
+				5E3CD29629500211008811EE /* DetailVC.swift in Sources */,
 				5EDBAEA82950007000A6FBD4 /* ViewModel.swift in Sources */,
 				5EDBAE88294FFE3700A6FBD4 /* SceneDelegate.swift in Sources */,
 			);

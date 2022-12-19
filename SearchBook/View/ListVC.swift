@@ -27,7 +27,6 @@ class ListVC: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "키워드를 입력해주세요."
         searchController.searchBar.delegate = self
-        searchController.searchBar.text = "The lord of the rings"
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
@@ -64,6 +63,13 @@ extension ListVC: UITableViewDataSource {
 
 extension ListVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: DetailVC.self)) as? DetailVC else { return }
+        
+        vc.data = viewModel.bookList[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
