@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 ///목록 셀
 class ListCell: UITableViewCell {
@@ -15,4 +16,21 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     ///저자명
     @IBOutlet weak var lblSubTitle: UILabel!
+    
+    func configure(data: Docs) {
+        
+        lblTitle.text  = data.title
+        lblSubTitle.text = data.author_name?.first
+        
+        ivCover.kf.indicatorType = .activity
+        
+        var url: URL?
+        
+        if let cover_i = data.cover_i {
+            url = URL(string: "https://covers.openlibrary.org/b/id/\(cover_i)-S.jpg")
+        }
+        
+        ivCover.kf.setImage(with: url, options: [.transition(.fade(0.5))])
+    }
+    
 }

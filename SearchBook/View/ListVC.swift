@@ -14,10 +14,13 @@ class ListVC: UIViewController {
     ///로딩 인디케이터
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    let viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchController()
+        setupBind()
     }
     
     private func setupSearchController() {
@@ -31,19 +34,51 @@ class ListVC: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.title = "도서 검색"
     }
+    
+    private func setupBind() {
+        
+        viewModel.outPutData = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.isLoading = { [weak self] in
+            $0 ? self?.indicator.startAnimating() : self?.indicator.stopAnimating()
+        }
+    }
 }
 
 extension ListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        viewModel.bookList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ListCell.self), for: indexPath) as? ListCell else { return UITableViewCell() }
         
+        cell.configure(data: viewModel.bookList[indexPath.row])
+        
         return cell
     }
 }
+
+
+extension ListVC: UITableViewDelegate {
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+        
+        if offsetY > (contentHeight - height) {
+            
+            viewModel.scrollBottom()
+        }
+    }
+}
+
+
 
 extension ListVC: UISearchBarDelegate {
     
@@ -57,5 +92,6 @@ extension ListVC: UISearchBarDelegate {
         
         guard let searchTerm = searchBar.text, searchTerm.isEmpty == false else { return }
         
+        viewModel.inputKeyword(searchTerm)
     }
 }
