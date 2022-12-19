@@ -15,6 +15,8 @@
 		5EDBAE9E294FFF2A00A6FBD4 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE9B294FFF2A00A6FBD4 /* ListCell.swift */; };
 		5EDBAE9F294FFF2A00A6FBD4 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE9C294FFF2A00A6FBD4 /* ListVC.swift */; };
 		5EDBAEA32950003E00A6FBD4 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAEA22950003E00A6FBD4 /* Entity.swift */; };
+		5EDBAEA82950007000A6FBD4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAEA52950007000A6FBD4 /* ViewModel.swift */; };
+		5EDBAEA92950007000A6FBD4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAEA72950007000A6FBD4 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5EDBAE9B294FFF2A00A6FBD4 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		5EDBAE9C294FFF2A00A6FBD4 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		5EDBAEA22950003E00A6FBD4 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		5EDBAEA52950007000A6FBD4 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5EDBAEA72950007000A6FBD4 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				5EDBAEA12950003E00A6FBD4 /* Model */,
 				5EDBAE99294FFF2A00A6FBD4 /* View */,
+				5EDBAEA42950007000A6FBD4 /* ViewModel */,
+				5EDBAEA62950007000A6FBD4 /* Network */,
 				5EDBAEA0294FFF3500A6FBD4 /* Supporting Files */,
 			);
 			path = SearchBook;
@@ -95,6 +101,22 @@
 				5EDBAEA22950003E00A6FBD4 /* Entity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5EDBAEA42950007000A6FBD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5EDBAEA52950007000A6FBD4 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5EDBAEA62950007000A6FBD4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5EDBAEA72950007000A6FBD4 /* Service.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDBAE9F294FFF2A00A6FBD4 /* ListVC.swift in Sources */,
+				5EDBAEA92950007000A6FBD4 /* Service.swift in Sources */,
 				5EDBAEA32950003E00A6FBD4 /* Entity.swift in Sources */,
 				5EDBAE86294FFE3700A6FBD4 /* AppDelegate.swift in Sources */,
 				5EDBAE9E294FFF2A00A6FBD4 /* ListCell.swift in Sources */,
+				5EDBAEA82950007000A6FBD4 /* ViewModel.swift in Sources */,
 				5EDBAE88294FFE3700A6FBD4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
