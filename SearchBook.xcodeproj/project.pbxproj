@@ -14,6 +14,7 @@
 		5EDBAE92294FFE3900A6FBD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDBAE90294FFE3900A6FBD4 /* LaunchScreen.storyboard */; };
 		5EDBAE9E294FFF2A00A6FBD4 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE9B294FFF2A00A6FBD4 /* ListCell.swift */; };
 		5EDBAE9F294FFF2A00A6FBD4 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAE9C294FFF2A00A6FBD4 /* ListVC.swift */; };
+		5EDBAEA32950003E00A6FBD4 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBAEA22950003E00A6FBD4 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5EDBAE93294FFE3900A6FBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EDBAE9B294FFF2A00A6FBD4 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		5EDBAE9C294FFF2A00A6FBD4 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		5EDBAEA22950003E00A6FBD4 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		5EDBAE84294FFE3700A6FBD4 /* SearchBook */ = {
 			isa = PBXGroup;
 			children = (
+				5EDBAEA12950003E00A6FBD4 /* Model */,
 				5EDBAE99294FFF2A00A6FBD4 /* View */,
 				5EDBAEA0294FFF3500A6FBD4 /* Supporting Files */,
 			);
@@ -84,6 +87,14 @@
 				5EDBAE93294FFE3900A6FBD4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EDBAEA12950003E00A6FBD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EDBAEA22950003E00A6FBD4 /* Entity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDBAE9F294FFF2A00A6FBD4 /* ListVC.swift in Sources */,
+				5EDBAEA32950003E00A6FBD4 /* Entity.swift in Sources */,
 				5EDBAE86294FFE3700A6FBD4 /* AppDelegate.swift in Sources */,
 				5EDBAE9E294FFF2A00A6FBD4 /* ListCell.swift in Sources */,
 				5EDBAE88294FFE3700A6FBD4 /* SceneDelegate.swift in Sources */,
