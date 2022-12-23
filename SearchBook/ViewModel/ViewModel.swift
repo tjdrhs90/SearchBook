@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ViewModel {
+final class ViewModel {
     ///데이터 엔티티
     var entity: Entity?
     ///책 목록

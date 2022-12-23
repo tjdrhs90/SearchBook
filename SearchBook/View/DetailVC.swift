@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 ///상세 화면
-class DetailVC: UIViewController {
+final class DetailVC: UIViewController {
     
     ///커버 이미지뷰
     @IBOutlet weak var ivCover: UIImageView!

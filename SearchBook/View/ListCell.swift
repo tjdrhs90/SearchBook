@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 ///목록 셀
-class ListCell: UITableViewCell {
+final class ListCell: UITableViewCell {
     ///커버 이미지뷰
     @IBOutlet weak var ivCover: UIImageView!
     ///제목

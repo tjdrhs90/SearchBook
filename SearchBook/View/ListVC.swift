@@ -8,7 +8,7 @@
 import UIKit
 
 ///목록 화면
-class ListVC: UIViewController {
+final class ListVC: UIViewController {
     ///목록 테이블뷰
     @IBOutlet weak var tableView: UITableView!
     ///로딩 인디케이터
