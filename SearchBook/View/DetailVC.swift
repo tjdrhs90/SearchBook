@@ -12,21 +12,21 @@ import Kingfisher
 final class DetailVC: UIViewController {
     
     ///커버 이미지뷰
-    @IBOutlet weak var ivCover: UIImageView!
+    @IBOutlet weak private var ivCover: UIImageView!
     ///제목
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak private var lblTitle: UILabel!
     ///저자
-    @IBOutlet weak var lblAuthorName: UILabel!
+    @IBOutlet weak private var lblAuthorName: UILabel!
     ///최초 발행 연도
-    @IBOutlet weak var lblPublishYear: UILabel!
+    @IBOutlet weak private var lblPublishYear: UILabel!
     ///에디션 수
-    @IBOutlet weak var lblEditionCount: UILabel!
+    @IBOutlet weak private var lblEditionCount: UILabel!
     ///발행 장소
-    @IBOutlet weak var lblPublishPlace: UILabel!
+    @IBOutlet weak private var lblPublishPlace: UILabel!
     ///주제
-    @IBOutlet weak var lblSubject: UILabel!
+    @IBOutlet weak private var lblSubject: UILabel!
     ///배우
-    @IBOutlet weak var lblPerson: UILabel!
+    @IBOutlet weak private var lblPerson: UILabel!
     
     var data: Docs?
     

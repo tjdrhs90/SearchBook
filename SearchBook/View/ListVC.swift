@@ -10,11 +10,11 @@ import UIKit
 ///목록 화면
 final class ListVC: UIViewController {
     ///목록 테이블뷰
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     ///로딩 인디케이터
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak private var indicator: UIActivityIndicatorView!
     
-    let viewModel = ViewModel()
+    private let viewModel = ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
