@@ -8,25 +8,17 @@
 import Foundation
 
 struct Service {
-    func fetchData(keyword: String, page: String, onCompleted: @escaping (Entity) -> Void) {
+    func searchData(keyword: String, page: String, onCompleted: @escaping (Entity) -> Void) {
         
-        let baseURL = "https://openlibrary.org/search.json"
+        guard let encodeKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
-        var components = URLComponents(string: baseURL)
-        
-        let queryItems = [URLQueryItem(name: "q", value: keyword),
+        let queryItems = [URLQueryItem(name: "q", value: encodeKeyword),
                           URLQueryItem(name: "page", value: page)]
         
-        components?.percentEncodedQueryItems = queryItems
-        
-        guard let url = components?.url else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            
-            guard let data,
-                  let model = try? JSONDecoder().decode(Entity.self, from: data) else { return }
-            
-            onCompleted(model)
-        }.resume()
+        Repository.requestAPI(path: .search, queryItems: queryItems) { (response: Entity) in
+            onCompleted(response)
+        } failure: { err in
+            print(err.localizedDescription)
+        }
     }
 }

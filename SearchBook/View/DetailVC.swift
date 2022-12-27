@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 ///상세 화면
 final class DetailVC: UIViewController {
@@ -37,11 +36,8 @@ final class DetailVC: UIViewController {
 
         guard let data else { return }
         
-        ivCover.kf.indicatorType = .activity
-        
         if let cover_i = data.cover_i {
-            let url = URL(string: "https://covers.openlibrary.org/b/id/\(cover_i)-M.jpg")
-            ivCover.kf.setImage(with: url, options: [.transition(.fade(0.5))])
+            ivCover.setKfImg(urlStr: ApiURL.imgURL(id: String(cover_i), size: .medium))
         } else {
             ivCover.isHidden = true
         }

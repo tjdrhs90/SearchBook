@@ -15,7 +15,7 @@ final class ViewModel {
     ///서비스
     let service = Service()
     ///책 검색 완료
-    var outPutData: (() -> ())?
+    var outputData: (() -> ())?
     ///로딩 클로저
     var isLoading: ((Bool) -> ())?
     ///페이징 플래그
@@ -27,30 +27,6 @@ final class ViewModel {
     
     func inputKeyword(_ keyword: String) {
         fetchData(keyword: keyword, page: "1")
-    }
-    
-    func fetchData(keyword: String, page: String) {
-        
-        let changeKeyword = keyword.replacingOccurrences(of: " ", with: "+")
-        
-        isPaging = true
-        
-        service.fetchData(keyword: changeKeyword, page: page) { [weak self] in
-            self?.entity = $0
-            
-            let list = $0.docs ?? []
-            
-            if page == "1" {
-                self?.bookList = list
-            } else {
-                self?.bookList += list
-            }
-            
-            DispatchQueue.main.async {
-                self?.outPutData?()
-                self?.isPaging = false
-            }
-        }
     }
     
     func scrollBottom() {
@@ -68,6 +44,30 @@ final class ViewModel {
             let nextPage = String(nowPage + 1)
             
             fetchData(keyword: keyword, page: nextPage)
+        }
+    }
+    
+    private func fetchData(keyword: String, page: String) {
+        
+        let changeKeyword = keyword.replacingOccurrences(of: " ", with: "+")
+        
+        isPaging = true
+        
+        service.searchData(keyword: changeKeyword, page: page) { [weak self] in
+            self?.entity = $0
+            
+            let list = $0.docs ?? []
+            
+            if page == "1" {
+                self?.bookList = list
+            } else {
+                self?.bookList += list
+            }
+            
+            DispatchQueue.main.async {
+                self?.outputData?()
+                self?.isPaging = false
+            }
         }
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 ///목록 셀
 final class ListCell: UITableViewCell {
@@ -22,15 +21,10 @@ final class ListCell: UITableViewCell {
         lblTitle.text  = data.title
         lblSubTitle.text = data.author_name?.first
         
-        ivCover.kf.indicatorType = .activity
-        
-        var url: URL?
-        
         if let cover_i = data.cover_i {
-            url = URL(string: "https://covers.openlibrary.org/b/id/\(cover_i)-S.jpg")
+            ivCover.setKfImg(urlStr: ApiURL.imgURL(id: String(cover_i), size: .small))
+        } else {
+            ivCover.setKfImg(urlStr: nil)
         }
-        
-        ivCover.kf.setImage(with: url, options: [.transition(.fade(0.5))])
     }
-    
 }

@@ -36,7 +36,7 @@ final class ListVC: UIViewController {
     
     private func setupBind() {
         
-        viewModel.outPutData = { [weak self] in
+        viewModel.outputData = { [weak self] in
             self?.tableView.reloadData()
         }
         
@@ -60,7 +60,6 @@ extension ListVC: UITableViewDataSource {
     }
 }
 
-
 extension ListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,8 +82,6 @@ extension ListVC: UITableViewDelegate {
         }
     }
 }
-
-
 
 extension ListVC: UISearchBarDelegate {
     
